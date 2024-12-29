@@ -93,13 +93,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc func getAppVersion() -> String {
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            return version
+        }
+        return "Unknown"
+    }
+    
     @objc func showMenu() {
         let menu = NSMenu()
         
         // Add app name as a headline
+        let appVersion = getAppVersion()
         let appNameItem = NSMenuItem(title: "Battery Monitor", action: nil, keyEquivalent: "")
         appNameItem.isEnabled = false
-        appNameItem.attributedTitle = NSAttributedString(string: "Battery Monitor", attributes: [
+        appNameItem.attributedTitle = NSAttributedString(string: "Battery Monitor v\(appVersion)", attributes: [
             .foregroundColor: NSColor.labelColor
         ])
         menu.addItem(appNameItem)
