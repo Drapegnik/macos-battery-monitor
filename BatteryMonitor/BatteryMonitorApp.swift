@@ -38,16 +38,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startMonitoringBattery() {
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.checkBatteryLevel()
         }
     }
     
     func checkBatteryLevel() {
         let batteryLevel = getBatteryLevel()
-        if batteryLevel <= lowBatteryThreshold {
+        let isCharging = isLaptopCharging()
+        
+        if !isCharging && batteryLevel <= lowBatteryThreshold {
             showLowBatteryWarning(batteryLevel: batteryLevel)
         }
+    }
+    
+    func isLaptopCharging() -> Bool {
+        let powerSource = IOPSCopyPowerSourcesInfo().takeRetainedValue()
+        let powerSources = IOPSCopyPowerSourcesList(powerSource).takeRetainedValue() as [CFTypeRef]
+        
+        for powerSource in powerSources {
+            let description = IOPSGetPowerSourceDescription(powerSource, powerSource).takeUnretainedValue() as! [String: Any]
+            
+            if let powerSourceState = description[kIOPSPowerSourceStateKey] as? String,
+               let isCharging = description[kIOPSIsChargingKey] as? Bool,
+               let isACPower = description[kIOPSPowerSourceStateKey] as? String {
+                
+                // Check if the power source is AC Power or if it's explicitly charging
+                if powerSourceState == kIOPSACPowerValue || isCharging || isACPower == "AC Power" {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func getBatteryLevel() -> Double {
