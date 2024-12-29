@@ -19,6 +19,7 @@
 		E35DB59A2D20D3C5005625FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E35DB59C2D20D3C5005625FB /* BatteryMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BatteryMonitor.entitlements; sourceTree = "<group>"; };
 		E35DB5A22D20D463005625FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E35DB5A32D20E3E4005625FB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +36,7 @@
 		E35DB5872D20D3C3005625FB = {
 			isa = PBXGroup;
 			children = (
+				E35DB5A32D20E3E4005625FB /* README.md */,
 				E35DB5922D20D3C3005625FB /* BatteryMonitor */,
 				E35DB5912D20D3C3005625FB /* Products */,
 			);
