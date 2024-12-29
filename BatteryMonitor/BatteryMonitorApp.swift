@@ -21,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
     var timer: Timer?
     let lowBatteryThreshold = 5.0 // Set the low battery threshold (5%)
+    var REPO_LINK = "https://github.com/Drapegnik/macos-battery-monitor"
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         createStatusItem()
@@ -86,9 +87,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         alert.runModal()
     }
     
+    @objc func openAboutLink() {
+        if let url = URL(string: REPO_LINK) {
+            NSWorkspace.shared.open(url)
+        }
+    }
+    
     @objc func showMenu() {
         let menu = NSMenu()
+        
+        // Add app name as a headline
+        let appNameItem = NSMenuItem(title: "Battery Monitor", action: nil, keyEquivalent: "")
+        appNameItem.isEnabled = false
+        appNameItem.attributedTitle = NSAttributedString(string: "Battery Monitor", attributes: [
+            .foregroundColor: NSColor.labelColor
+        ])
+        menu.addItem(appNameItem)
         menu.addItem(NSMenuItem.separator())
+        
+        // Add About menu item
+        menu.addItem(NSMenuItem(title: "About", action: #selector(openAboutLink), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Stop", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusItem?.menu = menu
