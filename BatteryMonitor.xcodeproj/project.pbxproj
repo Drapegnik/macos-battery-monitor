@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E35DB5942D20D3C3005625FB /* BatteryMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35DB5932D20D3C3005625FB /* BatteryMonitorApp.swift */; };
-		E35DB5962D20D3C3005625FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35DB5952D20D3C3005625FB /* ContentView.swift */; };
 		E35DB5982D20D3C5005625FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35DB5972D20D3C5005625FB /* Assets.xcassets */; };
 		E35DB59B2D20D3C5005625FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35DB59A2D20D3C5005625FB /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,10 +15,10 @@
 /* Begin PBXFileReference section */
 		E35DB5902D20D3C3005625FB /* BatteryMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35DB5932D20D3C3005625FB /* BatteryMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMonitorApp.swift; sourceTree = "<group>"; };
-		E35DB5952D20D3C3005625FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E35DB5972D20D3C5005625FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35DB59A2D20D3C5005625FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E35DB59C2D20D3C5005625FB /* BatteryMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BatteryMonitor.entitlements; sourceTree = "<group>"; };
+		E35DB5A22D20D463005625FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +51,8 @@
 		E35DB5922D20D3C3005625FB /* BatteryMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				E35DB5A22D20D463005625FB /* Info.plist */,
 				E35DB5932D20D3C3005625FB /* BatteryMonitorApp.swift */,
-				E35DB5952D20D3C3005625FB /* ContentView.swift */,
 				E35DB5972D20D3C5005625FB /* Assets.xcassets */,
 				E35DB59C2D20D3C5005625FB /* BatteryMonitor.entitlements */,
 				E35DB5992D20D3C5005625FB /* Preview Content */,
@@ -139,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35DB5962D20D3C3005625FB /* ContentView.swift in Sources */,
 				E35DB5942D20D3C3005625FB /* BatteryMonitorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +272,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BatteryMonitor/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BatteryMonitor/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,6 +298,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BatteryMonitor/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BatteryMonitor/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
