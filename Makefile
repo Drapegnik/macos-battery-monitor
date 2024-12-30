@@ -3,6 +3,7 @@ VERSION=0.1-alpha.2
 .PHONY: install
 install:
 	brew install imagemagick
+	brew install create-dmg
 
 .PHONY: prepare-icons
 prepare-icons:
@@ -13,4 +14,13 @@ prepare-icons:
 
 .PHONY: build-dmg
 build-dmg:
-	hdiutil create -fs HFS+ -srcfolder ./dist/BatteryMonitor-$(VERSION) -volname "Battery Monitor" ./dist/BatteryMonitor-$(VERSION).dmg
+	create-dmg \
+		--volname "Battery Monitor Installer" \
+		--window-pos 200 120 \
+		--window-size 800 400 \
+		--icon-size 100 \
+		--icon "BatteryMonitor.app" 200 190 \
+		--hide-extension "BatteryMonitor.app" \
+		--app-drop-link 600 185 \
+		"./dist/BatteryMonitor-$(VERSION)-Installer.dmg" \
+		"./dist/BatteryMonitor-$(VERSION)"
