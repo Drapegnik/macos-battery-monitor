@@ -11,7 +11,8 @@
 1. Download the latest version of the app from the [Releases](https://github.com/Drapegnik/macos-battery-monitor/releases/latest) page
 2. Open the downloaded `.dmg` file
 3. Drag the app to the `Applications` folder:
-<img width="912" alt="Screenshot 2024-12-30 at 03 24 05" src="https://github.com/user-attachments/assets/5dfcb058-fd02-4b12-a77f-13ce0629f726" />
+
+<img width="912" alt="Screenshot 2025-01-01 at 18 55 09" src="https://github.com/user-attachments/assets/de856531-5995-4a66-8509-440f6f89a1e4" />
 
 4. Open the `Applications` folder, and open `BatteryMonitor` app with _right-click_ (you may need to do this twice):
 <p align="center">
